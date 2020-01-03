@@ -21,6 +21,3 @@ SRC_URI = "git://github.com/linuxmint/cinnamon-menus.git"
 SRCREV = "43b32e785148b6fec07ade208752d70d17c4cbbb"
 PV = "4.4.0"
 S = "${WORKDIR}/git"
-
-
-#FILES_${PN} += "${datadir}/desktop-directories/"
