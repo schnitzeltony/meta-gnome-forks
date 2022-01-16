@@ -16,20 +16,20 @@ DEPENDS = " \
 PACKAGECONFIG ?= "alsa"
 PACKAGECONFIG[alsa] = "-Dalsa=true,-Dalsa=false,alsa-lib"
 
-inherit meson features_check gobject-introspection gettext gsettings
+inherit meson pkgconfig features_check gobject-introspection gettext gsettings
 
 REQUIRED_DISTRO_FEATURES = "x11 pulseaudio"
 
 # gobject-introspection is mandatory and cannot be configured
 REQUIRED_DISTRO_FEATURES += "gobject-introspection-data"
-UNKNOWN_CONFIGURE_WHITELIST_append = " introspection"
+GIR_MESON_OPTION = ""
 
-SRC_URI = "git://github.com/linuxmint/cinnamon-desktop.git"
-SRCREV = "7113417186f2c4c8688f313935291daaf7cc2bcd"
-PV = "4.4.1"
+SRC_URI = "git://github.com/linuxmint/cinnamon-desktop.git;branch=master;protocol=https"
+SRCREV = "3828f6bcbd4bcbd9f825ec2a9467b310fe0258bc"
+PV = "5.2.1"
 S = "${WORKDIR}/git"
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/glib-2.0/schemas \
     ${datadir}/libcinnamon-desktop \
 "
