@@ -18,24 +18,23 @@ inherit autotools features_check gettext gtk-doc gobject-introspection gsettings
 REQUIRED_DISTRO_FEATURES = "x11"
 
 SRC_URI = " \
-    git://github.com/linuxmint/muffin.git \
+    git://github.com/linuxmint/muffin.git;branch=master;protocol=https \
     file://0001-Do-not-check-fo-zenity-executable.patch \
-    file://0002-fix-warnings-when-compiling.patch  \
     file://gtk-doc.make \
 "
-SRCREV = "a00332bfd5e437883cdf38dfaa455a4b3448c6e4"
-PV = "4.4.2"
+SRCREV = "6a2a5a65f6dad71c37fdea34dad80035bd4ca336"
+PV = "5.2.0"
 S = "${WORKDIR}/git"
 
 EXTRA_OECONF = "--disable-gtk-doc"
 
-do_configure_prepend() {
+do_configure:prepend() {
     cp ${WORKDIR}/gtk-doc.make ${S}/
 }
 
 export GIR_EXTRA_LIBS_PATH="${B}/cogl/cogl/.libs:${B}/cogl/cogl-pango/.libs:${B}/cogl/cogl-path/.libs:${B}/clutter/clutter/.libs"
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/glib-2.0/schemas \
 "
 
