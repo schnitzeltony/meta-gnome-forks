@@ -15,9 +15,9 @@ REQUIRED_DISTRO_FEATURES = "x11"
 
 # gobject-introspection is mandatory and cannot be configured
 REQUIRED_DISTRO_FEATURES += "gobject-introspection-data"
-UNKNOWN_CONFIGURE_WHITELIST_append = " introspection"
+GIR_MESON_OPTION = ""
 
-SRC_URI = "git://github.com/linuxmint/cinnamon-menus.git"
-SRCREV = "43b32e785148b6fec07ade208752d70d17c4cbbb"
-PV = "4.4.0"
+SRC_URI = "git://github.com/linuxmint/cinnamon-menus.git;branch=master;protocol=https"
+SRCREV = "1d7cb63f333c2b97c9fcd09c8303c4c5a7f9200e"
+PV = "5.2.0"
 S = "${WORKDIR}/git"
