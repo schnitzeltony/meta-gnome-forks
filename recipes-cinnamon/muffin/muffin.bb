@@ -1,5 +1,5 @@
 SUMMARY = "The window management library for the Cinnamon desktop"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=8955bdc698cdc995fb6abba2cb6f7347"
 
 DEPENDS = " \
