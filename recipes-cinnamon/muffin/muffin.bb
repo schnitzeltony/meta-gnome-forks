@@ -22,8 +22,8 @@ SRC_URI = " \
     file://0001-Do-not-check-fo-zenity-executable.patch \
     file://gtk-doc.make \
 "
-SRCREV = "6a2a5a65f6dad71c37fdea34dad80035bd4ca336"
-PV = "5.2.0"
+SRCREV = "b9a6f3fe43e44e304f7b2f76e00603347e55f82d"
+PV = "5.2.1"
 S = "${WORKDIR}/git"
 
 EXTRA_OECONF = "--disable-gtk-doc"
