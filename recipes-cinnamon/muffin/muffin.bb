@@ -42,13 +42,6 @@ do_install:append() {
         gir=`basename "$gir_full"`
         ln -sr "${D}${libdir}/${MUFFIN_API_NAME}/$gir" "${D}${datadir}/gir-1.0/$gir"
     done
-
-    # same for typelibs
-    install -d ${D}${libdir}/girepository-1.0
-    for typelib_full in `find ${D}${libdir}/${MUFFIN_API_NAME} -name '*.typelib'`; do
-        typelib=`basename "$typelib_full"`
-        ln -sr "${D}${libdir}/${MUFFIN_API_NAME}/$typelib" "${D}${libdir}/girepository-1.0/$typelib"
-    done
 }
 
 export GIR_EXTRA_LIBS_PATH="${B}/cogl/cogl/.libs:${B}/cogl/cogl-pango/.libs:${B}/cogl/cogl-path/.libs:${B}/clutter/clutter/.libs"
