@@ -9,7 +9,7 @@ DEPENDS = "gtk+3"
 
 GTKDOC_MESON_OPTION = 'enable_docs'
 
-inherit meson features_check gettext gobject-introspection gtk-doc
+inherit meson pkgconfig features_check gettext gobject-introspection gtk-doc
 
 REQUIRED_DISTRO_FEATURES = "x11"
 
