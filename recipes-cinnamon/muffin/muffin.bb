@@ -10,6 +10,9 @@ DEPENDS = " \
     gtk+3 \
     json-glib \
     libinput \
+    startup-notification \
+    libcanberra \
+    libxinerama \
     cinnamon-desktop \
 "
 
@@ -44,7 +47,7 @@ do_install:append() {
     done
 }
 
-export GIR_EXTRA_LIBS_PATH="${B}/cogl/cogl/.libs:${B}/cogl/cogl-pango/.libs:${B}/cogl/cogl-path/.libs:${B}/clutter/clutter/.libs"
+export GIR_EXTRA_LIBS_PATH="${B}/src/core/.libs:${B}/cogl/cogl/.libs:${B}/cogl/cogl-pango/.libs:${B}/cogl/cogl-path/.libs:${B}/clutter/clutter/.libs"
 
 FILES:${PN} += " \
     ${datadir}/glib-2.0/schemas \
