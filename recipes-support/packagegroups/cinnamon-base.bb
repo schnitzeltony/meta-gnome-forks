@@ -19,6 +19,7 @@ RDEPENDS:${PN} = " \
     cinnamon-settings-daemon \
     cjs \
     muffin \
+    nemo \
     python3-xapp \
     libxapp \
 "
