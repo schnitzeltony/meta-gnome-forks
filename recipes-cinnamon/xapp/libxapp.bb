@@ -35,12 +35,15 @@ FILES:${PN} += " \
     ${datadir}/dbus-1 \
     ${libdir}/gtk-3.0/modules/libxapp-gtk3-module.so \
 "
+RDEPENDS:${PN} = " \
+    bash \
+    python3-core \
+"
 
 FILES:${PN}-dev += "${datadir}/glade"
 
 PACKAGES += "${PN}-python3"
 FILES:${PN}-python3 += "${PYTHON_SITEPACKAGES_DIR}"
 RDEPENDS::${PN}-python3 = " \
-    python3-core \
     ${PN} \
 "
