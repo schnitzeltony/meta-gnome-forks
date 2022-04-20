@@ -12,6 +12,7 @@ RDEPENDS:${PN} = " \
     cinnamon-control-center \
     cinnamon-desktop \
     cinnamon-menus \
+    cinnamon-session \
     cinnamon-settings-daemon \
     cjs \
     muffin \
