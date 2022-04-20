@@ -40,10 +40,12 @@ FILES:${PN} += " \
 "
 
 RDEPENDS:${PN} += " \
+    bash \
     cinnamon-control-center \
     cinnamon-menus \
     cinnamon-settings-daemon \
     evolution-data-server \
+    python3-core \
     python3-distro \
     python3-dbus \
     python3-lxml \
