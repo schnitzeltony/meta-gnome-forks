@@ -10,6 +10,7 @@ inherit packagegroup
 RDEPENDS:${PN} = " \
     mint-themes \
     mint-x-icons \
+    mint-y-icons \
     cinnamon \
     cinnamon-control-center \
     cinnamon-desktop \
