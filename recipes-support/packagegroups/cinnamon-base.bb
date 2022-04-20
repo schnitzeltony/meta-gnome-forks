@@ -8,6 +8,7 @@ PACKAGE_ARCH = "${TUNE_PKGARCH}"
 inherit packagegroup
 
 RDEPENDS:${PN} = " \
+    mint-themes \
     cinnamon \
     cinnamon-control-center \
     cinnamon-desktop \
