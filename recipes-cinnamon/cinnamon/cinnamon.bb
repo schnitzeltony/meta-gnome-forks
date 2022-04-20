@@ -40,6 +40,7 @@ FILES:${PN} += " \
 "
 
 RDEPENDS:${PN} += " \
+    cinnamon-control-center \
     cinnamon-menus \
     cinnamon-settings-daemon \
     evolution-data-server \

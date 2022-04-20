@@ -9,6 +9,7 @@ inherit packagegroup
 
 RDEPENDS:${PN} = " \
     cinnamon \
+    cinnamon-control-center \
     cinnamon-desktop \
     cinnamon-menus \
     cinnamon-settings-daemon \
