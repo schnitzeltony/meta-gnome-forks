@@ -29,4 +29,3 @@ EXTRA_OEMESON += " \
     -Dgconf=false \
 "
 
-#FILES:${PN} += "${libdir}/cinnamon-control-center-1/panels"
