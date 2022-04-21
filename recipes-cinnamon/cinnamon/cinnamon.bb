@@ -41,9 +41,11 @@ FILES:${PN} += " \
 
 RDEPENDS:${PN} += " \
     bash \
+    network-manager-applet \
     cinnamon-control-center \
     cinnamon-menus \
     cinnamon-settings-daemon \
+    nemo \
     evolution-data-server \
     python3-core \
     python3-distro \
