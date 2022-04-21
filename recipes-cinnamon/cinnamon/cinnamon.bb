@@ -44,6 +44,7 @@ RDEPENDS:${PN} += " \
     network-manager-applet \
     cinnamon-control-center \
     cinnamon-menus \
+    cinnamon-screensaver \
     cinnamon-settings-daemon \
     nemo \
     evolution-data-server \
