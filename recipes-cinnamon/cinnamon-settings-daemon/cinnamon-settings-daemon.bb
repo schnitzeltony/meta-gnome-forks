@@ -15,7 +15,6 @@ DEPENDS = " \
     libgnomekbd \
     libgudev \
     libnotify \
-    nss \
     polkit \
     pulseaudio \
     upower \
@@ -36,6 +35,7 @@ PV = "5.2.0+git${SRCPV}"
 S = "${WORKDIR}/git"
 
 EXTRA_OEMESON += " \
+    -Duse_smartcard=disabled \
     -Duse_wacom=disabled \
 "
 
