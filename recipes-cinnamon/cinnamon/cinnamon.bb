@@ -48,6 +48,7 @@ RDEPENDS:${PN} += " \
     cinnamon-settings-daemon \
     nemo \
     evolution-data-server \
+    keybinder \
     python3-core \
     python3-distro \
     python3-dbus \
@@ -63,6 +64,7 @@ RDEPENDS:${PN} += " \
     python3-requests \
     python3-setproctitle \
     python3-simplejson \
+    python3-syslog \
     python3-tinycss2 \
     python3-xapp \
 "
