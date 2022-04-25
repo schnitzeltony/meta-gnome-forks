@@ -55,6 +55,7 @@ RDEPENDS:${PN} += " \
     python3-pam \
     python3-pillow \
     python3-pexpect \
+    python3-psutil \
     python3-pycairo \
     python3-pygobject \
     python3-pyinotify \
