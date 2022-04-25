@@ -9,6 +9,7 @@ DEPENDS = " \
     python3-pygobject \
     gtk+3 \
     libgnomekbd \
+    libdbusmenu \
 "
 
 
@@ -26,7 +27,6 @@ PV = "2.2.8"
 S = "${WORKDIR}/git"
 
 EXTRA_OEMESON += " \
-    -Dstatus-notifier=false \
     -Dpy-overrides-dir=${PYTHON_SITEPACKAGES_DIR}/gi \
 "
 
