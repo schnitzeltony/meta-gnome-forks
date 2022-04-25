@@ -33,3 +33,7 @@ FILES:${PN} += " \
     ${datadir}/glib-2.0/schemas \
     ${datadir}/libcinnamon-desktop \
 "
+
+RDEPENDS:${PN} += " \
+    accountsservice \
+"
