@@ -30,6 +30,7 @@ FILES:${PN} += "${datadir}/dbus-1"
 RDEPENDS:${PN} += " \
     accountsservice \
     cinnamon-desktop \
+    caribou \
     libgnomekbd \
     python3-core \
     python3-pygobject \
