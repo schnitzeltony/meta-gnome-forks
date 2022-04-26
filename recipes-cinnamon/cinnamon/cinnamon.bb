@@ -48,6 +48,7 @@ RDEPENDS:${PN} += " \
     cinnamon-settings-daemon \
     nemo \
     evolution-data-server \
+    libtimezonemap \
     keybinder \
     python3-core \
     python3-distro \
