@@ -49,6 +49,7 @@ RDEPENDS:${PN} += " \
     nemo \
     evolution-data-server \
     libtimezonemap \
+    tzdata \
     gettext \
     keybinder \
     python3-core \
