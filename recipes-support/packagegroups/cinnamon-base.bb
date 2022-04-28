@@ -24,4 +24,5 @@ RDEPENDS:${PN} = " \
     nemo \
     python3-xapp \
     libxapp \
+    adwaita-icon-theme \
 "
