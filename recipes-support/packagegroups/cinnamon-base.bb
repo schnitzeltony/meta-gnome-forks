@@ -8,6 +8,7 @@ PACKAGE_ARCH = "${TUNE_PKGARCH}"
 inherit packagegroup
 
 RDEPENDS:${PN} = " \
+    mint-backgrounds-una \
     mint-themes \
     mint-x-icons \
     mint-y-icons \
