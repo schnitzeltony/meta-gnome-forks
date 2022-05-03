@@ -14,6 +14,7 @@ RDEPENDS:${PN} = " \
     mint-y-icons \
     cinnamon \
     cinnamon-control-center \
+    cinnamon-default-config \
     cinnamon-desktop \
     cinnamon-menus \
     cinnamon-screensaver \
