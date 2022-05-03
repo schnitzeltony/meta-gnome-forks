@@ -52,6 +52,11 @@ RDEPENDS:${PN} += " \
     tzdata \
     gettext \
     keybinder \
+    metacity \
+    gnome-panel \
+    wget \
+    cups \
+    accountsservice \
     python3-core \
     python3-distro \
     python3-dbus \
