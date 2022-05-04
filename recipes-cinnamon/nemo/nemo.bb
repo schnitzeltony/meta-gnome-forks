@@ -15,6 +15,7 @@ DEPENDS = " \
     libxapp \
     libexif \
     libgsf \
+    gvfs \
 "
 
 inherit meson pkgconfig gobject-introspection gtk-icon-cache gsettings gettext mime mime-xdg features_check
@@ -40,6 +41,7 @@ FILES:${PN} += " \
 "
 
 RDEPENDS:${PN} += " \
+   gvfs gvfsd-ftp gvfsd-sftp gvfsd-trash \
    python3-core \
    python3-xlrd \
 "
