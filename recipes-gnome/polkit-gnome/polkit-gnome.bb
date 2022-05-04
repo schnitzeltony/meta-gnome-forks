@@ -17,9 +17,15 @@ inherit autotools pkgconfig gtk-doc features_check
 
 REQUIRED_DISTRO_FEATURES = "x11 polkit"
 
+# 0002-0006 were taken from https://src.fedoraproject.org/rpms/polkit-gnome/tree/rawhide
 SRC_URI = " \
     git://gitlab.gnome.org/Archive/policykit-gnome.git;branch=master;protocol=https \
-    file://gtk-doc-check.patch \
+    file://0001-gtk-doc-check.patch \
+    file://0002-select-default-user.patch \
+    file://0003-autorestart.patch \
+    file://0004-use-accountsservice.patch \
+    file://0005-fresh-x11-timestamps.patch \
+    file://0006-auth-dialog-make-the-label-wrap-at-70-chars.patch \
 "
 SRCREV = "a0763a246a81188f60b0f9810143e49224dc752f"
 S = "${WORKDIR}/git"
