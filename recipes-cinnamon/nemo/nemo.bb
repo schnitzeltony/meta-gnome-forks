@@ -16,6 +16,7 @@ DEPENDS = " \
     libexif \
     libgsf \
     gvfs \
+    eject \
 "
 
 inherit meson pkgconfig gobject-introspection gtk-icon-cache gsettings gettext mime mime-xdg features_check
