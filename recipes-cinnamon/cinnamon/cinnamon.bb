@@ -26,7 +26,10 @@ REQUIRED_DISTRO_FEATURES += "x11 polkit"
 
 inherit meson pkgconfig gobject-introspection gtk-icon-cache gsettings gtk-doc gettext features_check
 
-SRC_URI = "git://github.com/linuxmint/cinnamon.git;branch=master;protocol=https"
+SRC_URI = " \
+    git://github.com/linuxmint/cinnamon.git;branch=master;protocol=https \
+    file://0001-Do-not-crash-on-systemd-reporting-Univeral-timezone.patch \
+"
 SRCREV = "037b17248b176c7f3dd5c9848f8c6738105c4cc2"
 PV = "5.2.7+git${SRCPV}"
 S = "${WORKDIR}/git"

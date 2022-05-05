@@ -1,0 +1,49 @@
+From b2065929dcbf0c6425d2e9e6913b445e70fbaa3c Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Andreas=20M=C3=BCller?= <schnitzeltony@gmail.com>
+Date: Thu, 5 May 2022 21:55:08 +0200
+Subject: [PATCH] Do not crash on systemd/tzdata reporting Univeral timezone
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+On a fresh / YOCTO build raspi image with
+
+* tzdata 2022a
+* systemd 250.4
+* a 'print(timezone)' added at line 260
+
+the following log is created:
+| using systemd backend
+| Universal
+| Traceback (most recent call last):
+|  File "/usr/share/cinnamon/cinnamon-settings/modules/cs_calendar.py", line 149, in _on_proxy_ready
+|    self.proxy_ready_callback()
+|  File "/usr/share/cinnamon/cinnamon-settings/modules/cs_calendar.py", line 77, in _on_proxy_ready
+|    self.tz_selector.set_timezone(self.zone)
+|  File "/usr/share/cinnamon/cinnamon-settings/modules/cs_calendar.py", line 263, in set_timezone
+|    region, city = timezone.split('/', maxsplit=1)
+|ValueError: not enough values to unpack (expected 2, got 1)
+
+Upstream-Status: Submitted [https://github.com/linuxmint/cinnamon/pull/10775]
+
+Signed-off-by: Andreas Müller <schnitzeltony@gmail.com>
+---
+ .../usr/share/cinnamon/cinnamon-settings/modules/cs_calendar.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/files/usr/share/cinnamon/cinnamon-settings/modules/cs_calendar.py b/files/usr/share/cinnamon/cinnamon-settings/modules/cs_calendar.py
+index 267533f07..3953a970f 100755
+--- a/files/usr/share/cinnamon/cinnamon-settings/modules/cs_calendar.py
++++ b/files/usr/share/cinnamon/cinnamon-settings/modules/cs_calendar.py
+@@ -255,7 +255,7 @@ class TimeZoneSelector(SettingsWidget):
+             self.region_map[region].append([city, _(city_display_name)])
+ 
+     def set_timezone(self, timezone):
+-        if timezone == "Etc/UTC":
++        if timezone == "Etc/UTC" or timezone == "Universal":
+             return
+ 
+         self.timezone = timezone
+-- 
+2.34.1
+
