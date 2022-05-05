@@ -1,0 +1,40 @@
+From 0aa0e62dd49e74253d132c7bd9a900af03bbc421 Mon Sep 17 00:00:00 2001
+From: okaestne <git@oliver-kaestner.de>
+Date: Sat, 9 Apr 2022 18:50:32 +0200
+Subject: [PATCH 5/6] cs: fix print_timing; remove stale touch function
+
+---
+ .../cinnamon/cinnamon-settings/cinnamon-settings.py   | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
+
+diff --git a/files/usr/share/cinnamon/cinnamon-settings/cinnamon-settings.py b/files/usr/share/cinnamon/cinnamon-settings/cinnamon-settings.py
+index 65d4a3028..7dee496e0 100755
+--- a/files/usr/share/cinnamon/cinnamon-settings/cinnamon-settings.py
++++ b/files/usr/share/cinnamon/cinnamon-settings/cinnamon-settings.py
+@@ -152,20 +152,15 @@ ARG_REWRITE = {
+ 
+ def print_timing(func):
+     # decorate functions with @print_timing to output how long they take to run.
+-    def wrapper(*arg):
++    def wrapper(*args, **kwargs):
+         t1 = time.time()
+-        res = func(*arg)
++        res = func(*args, **kwargs)
+         t2 = time.time()
+-        print('%s took %0.3f ms' % (func.func_name, (t2-t1)*1000.0))
++        print('%s took %0.3f ms' % (func.__name__, (t2-t1)*1000.0))
+         return res
+     return wrapper
+ 
+ 
+-def touch(fname, times=None):
+-    with open(fname, 'a'):
+-        os.utime(fname, times)
+-
+-
+ class MainWindow(Gio.Application):
+     # Change pages
+     def side_view_nav(self, side_view, path, cat):
+-- 
+2.34.1
+

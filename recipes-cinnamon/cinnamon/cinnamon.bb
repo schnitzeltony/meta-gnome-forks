@@ -29,6 +29,12 @@ inherit meson pkgconfig gobject-introspection gtk-icon-cache gsettings gtk-doc g
 SRC_URI = " \
     git://github.com/linuxmint/cinnamon.git;branch=master;protocol=https \
     file://0001-Do-not-crash-on-systemd-reporting-Univeral-timezone.patch \
+    file://okaestne-settings-performance/0001-ExtensionCore-defer-loading-of-cinnamon-version-fix-.patch \
+    file://okaestne-settings-performance/0002-cs_privacy-defer-init-of-NM.Client.patch \
+    file://okaestne-settings-performance/0003-cs_backgrounds-defer-import-of-imtools-module.patch \
+    file://okaestne-settings-performance/0004-Spices-defer-import-of-requests-module.patch \
+    file://okaestne-settings-performance/0005-cs-fix-print_timing-remove-stale-touch-function.patch \
+    file://okaestne-settings-performance/0006-cs-lazy-load-python-modules-when-passed-as-arg.patch \
 "
 SRCREV = "037b17248b176c7f3dd5c9848f8c6738105c4cc2"
 PV = "5.2.7+git${SRCPV}"

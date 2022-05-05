@@ -1,0 +1,37 @@
+From 1358b9df2b18fb7ecb5077cdf54b427cf47e26ac Mon Sep 17 00:00:00 2001
+From: okaestne <git@oliver-kaestner.de>
+Date: Mon, 4 Apr 2022 00:55:26 +0200
+Subject: [PATCH 4/6] Spices: defer import of requests module
+
+saves ~25ms import time
+---
+ files/usr/share/cinnamon/cinnamon-settings/bin/Spices.py | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/files/usr/share/cinnamon/cinnamon-settings/bin/Spices.py b/files/usr/share/cinnamon/cinnamon-settings/bin/Spices.py
+index f345243f3..348d9488d 100644
+--- a/files/usr/share/cinnamon/cinnamon-settings/bin/Spices.py
++++ b/files/usr/share/cinnamon/cinnamon-settings/bin/Spices.py
+@@ -12,9 +12,7 @@ try:
+     import threading
+     from PIL import Image
+     import datetime
+-    import proxygsettings
+     import time
+-    import requests
+ except Exception as detail:
+     print(detail)
+     sys.exit(1)
+@@ -382,6 +380,9 @@ class Spice_Harvester(GObject.Object):
+         #Like the one in urllib. Unlike urllib.retrieve url_retrieve
+         #can be interrupted. KeyboardInterrupt exception is raised when
+         #interrupted.
++        import proxygsettings
++        import requests
++
+         count = 0
+         blockSize = 1024 * 8
+         proxy_info = proxygsettings.get_proxy_settings()
+-- 
+2.34.1
+
