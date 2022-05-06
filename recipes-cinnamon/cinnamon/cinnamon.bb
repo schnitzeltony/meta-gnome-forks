@@ -35,10 +35,16 @@ SRC_URI = " \
     file://okaestne-settings-performance/0004-Spices-defer-import-of-requests-module.patch \
     file://okaestne-settings-performance/0005-cs-fix-print_timing-remove-stale-touch-function.patch \
     file://okaestne-settings-performance/0006-cs-lazy-load-python-modules-when-passed-as-arg.patch \
+    file://polkit-cinnamon-authentication-agent-1.desktop \
 "
 SRCREV = "037b17248b176c7f3dd5c9848f8c6738105c4cc2"
 PV = "5.2.7+git${SRCPV}"
 S = "${WORKDIR}/git"
+
+do_install:append() {
+    install -d ${D}${sysconfdir}/xdg/autostart
+    install -m644 ${WORKDIR}/polkit-cinnamon-authentication-agent-1.desktop ${D}${sysconfdir}/xdg/autostart
+}
 
 FILES:${PN} += " \
     ${datadir}/cinnamon-session \
@@ -63,6 +69,7 @@ RDEPENDS:${PN} += " \
     keybinder \
     metacity \
     gnome-panel \
+    polkit-gnome \
     wget \
     cups \
     accountsservice \
