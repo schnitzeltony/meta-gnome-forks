@@ -9,7 +9,7 @@ DEPENDS = " \
     dbus-native \
     glib-2.0-native \
     gtk+3 \
-    mozjs-78 \
+    mozjs-91 \
     sysprof \
 "
 
@@ -19,8 +19,8 @@ REQUIRED_DISTRO_FEATURES = "x11 gobject-introspection-data"
 GIR_MESON_OPTION = ""
 
 SRC_URI = "git://github.com/linuxmint/cjs.git;branch=master;protocol=https"
-SRCREV = "b73665be7781a34e4da3bfbfb5fa853a76edbf9c"
-PV = "5.2.0"
+SRCREV = "7235a06fe12bff39c8ab15788fe8c8618a45f163"
+PV = "5.4.1+"
 S = "${WORKDIR}/git"
 
 EXTRA_OEMESON += " \
