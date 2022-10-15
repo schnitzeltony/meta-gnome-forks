@@ -1,15 +1,14 @@
 SUMMARY = "TThe Cinnamon Javascript interpreter"
-LICENSE = "GPL-2.0-only & LGPL-2.0-only"
+LICENSE = "MIT & LGPL-2.0-only"
 LIC_FILES_CHKSUM = " \
-    file://COPYING;md5=beb29cf17fabe736f0639b09ee6e76fa \
-    file://COPYING.LGPL;md5=3bf50002aefd002f49e7bb854063f7e7 \
+    file://COPYING;md5=8dcea832f6acf45d856abfeb2d51ec48 \
 "
 
 DEPENDS = " \
     dbus-native \
     glib-2.0-native \
     gtk+3 \
-    mozjs-91 \
+    mozjs-78 \
     sysprof \
 "
 
